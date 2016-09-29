@@ -16,5 +16,5 @@ branches:
         - production
 script:
     - npm test
-after_script:
-    - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN > /dev/null
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
