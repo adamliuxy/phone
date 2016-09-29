@@ -1,11 +1,12 @@
 language: node_js
 node_js:
-    - 4.2.3
+    - 0.8
+    - 4.5
 notifications:
     email:
         - adam@aftership.net
 env:
-    - CACHE_DIR=cache CXX=g++-4.8
+    - CACHE_DIR=cache
 cache:
     directories:
         - $CACHE_DIR
@@ -17,9 +18,3 @@ script:
     - npm test
 after_script:
     - bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN > /dev/null
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8
